@@ -28,9 +28,9 @@ app.get('/u/:unit_id', (req, res) => {
   res.send(`
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <h1>Unit: ${unit_id}</h1>
-    <p><b>Model:</b> ${unit.model}</p>
-    <p><b>Location:</b> ${unit.location}</p>
-    <p><b>Memo:</b> ${unit.memo}</p>
+    <p><b>シリアルナンバー:</b> ${unit.serial_flt}</p>
+    <p><b>エアコン型式:</b> ${unit.model_ac}</p>
+    <p><b>フィルタ型式:</b> ${unit.model_flt}</p>
     <hr>
     <p>このページは QRコードを読み取るだけで自動表示されます（PoC）。</p>
   `);
