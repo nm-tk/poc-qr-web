@@ -3,7 +3,7 @@ import express from 'express';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// PoC‚ÌŠÈ’P‚Èİ”õƒf[ƒ^i‚±‚Ì‚Ü‚Ü‚Å‚à“®‚«‚Ü‚·j
+// PoCã®ç°¡å˜ãªè¨­å‚™ãƒ‡ãƒ¼ã‚¿ï¼ˆã“ã®ã¾ã¾ã§ã‚‚å‹•ãã¾ã™ï¼‰
 const units = {
   "PGF-0001": { serial_flt: "62---9999999", model_ac: "FVYCP---", model_flt: "PGF---" },
   "PGF-0002": { serial_flt: "62---9999998", model_ac: "FFYVP---", model_flt: "PGF---" },
@@ -11,10 +11,10 @@ const units = {
 };
 
 app.get('/', (_, res) => {
-  res.send("<h1>NFC/QR PoC</h1><p>/u/PGF-0001 ‚ğ‚µ‚Ä‚­‚¾‚³‚¢B</p>");
+  res.send("<h1>NFC/QR PoC</h1><p>/u/PGF-0001 ã‚’è©¦ã—ã¦ãã ã•ã„ã€‚</p>");
 });
 
-// QR/NFC‚ÌURL‚ª’@‚­æ
+// QR/NFCã®URLãŒå©ãå…ˆ
 app.get('/u/:unit_id', (req, res) => {
   const { unit_id } = req.params;
   const unit = units[unit_id];
@@ -28,11 +28,11 @@ app.get('/u/:unit_id', (req, res) => {
   res.send(`
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <h1>Unit: ${unit_id}</h1>
-    <p><b>ƒVƒŠƒAƒ‹ƒiƒ“ƒo[:</b> ${unit.serial_flt}</p>
-    <p><b>ƒGƒAƒRƒ“Œ^®:</b> ${unit.model_ac}</p>
-    <p><b>ƒtƒBƒ‹ƒ^Œ^®:</b> ${unit.model_flt}</p>
+    <p><b>ã‚·ãƒªã‚¢ãƒ«ãƒŠãƒ³ãƒãƒ¼:</b> ${unit.serial_flt}</p>
+    <p><b>ã‚¨ã‚¢ã‚³ãƒ³å‹å¼:</b> ${unit.model_ac}</p>
+    <p><b>ãƒ•ã‚£ãƒ«ã‚¿å‹å¼:</b> ${unit.model_flt}</p>
     <hr>
-    <p>‚±‚Ìƒy[ƒW‚Í QRƒR[ƒh‚ğ“Ç‚İæ‚é‚¾‚¯‚Å©“®•\¦‚³‚ê‚Ü‚·iPoCjB</p>
+    <p>ã“ã®ãƒšãƒ¼ã‚¸ã¯ QRã‚³ãƒ¼ãƒ‰ã‚’èª­ã¿å–ã‚‹ã ã‘ã§è‡ªå‹•è¡¨ç¤ºã•ã‚Œã¾ã™ï¼ˆPoCï¼‰ã€‚</p>
   `);
 });
 
